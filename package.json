@@ -1,0 +1,74 @@
+{
+  "name": "tinysearch",
+  "description": "[WIP] Tiny search engine implementation for your studies",
+  "version": "0.0.0",
+  "author": "takuya-a <takuya.a@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/takuyaa/tinysearch/issues"
+  },
+  "dependencies": {
+    "tslib": "1.8.0"
+  },
+  "devDependencies": {
+    "@types/jest": "21.1.8",
+    "@types/node": "8.0.53",
+    "jest": "21.2.1",
+    "reuters-21578-json": "0.0.8",
+    "rimraf": "2.6.2",
+    "tslint": "5.8.0",
+    "typescript": "2.6.2"
+  },
+  "engines": {
+    "node": ">=7.5.0"
+  },
+  "files": [
+    "LICENSE.txt",
+    "README.md",
+    "lib",
+    "package-lock.json",
+    "package.json"
+  ],
+  "homepage": "https://github.com/takuyaa/tinysearch",
+  "keywords": [
+    "full-text search",
+    "inverted index"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/takuyaa/tinysearch.git"
+  },
+  "scripts": {
+    "build": "$(npm bin)/tsc -p tsconfig.json",
+    "clean": "rimraf coverage/ lib/",
+    "coverage": "jest --coverage",
+    "lint": "tslint -t stylish -c tslint.json src/**/*.ts test/**/*.ts",
+    "prepublishOnly": "npm test && npm run clean && $(npm bin)/tsc -p tsconfig.json",
+    "pretest": "npm run lint",
+    "test": "jest",
+    "prepare": "test -r node_modules/reuters-21578-json/data/fullFileStream/justTen.str && cp node_modules/reuters-21578-json/data/fullFileStream/justTen.str test/resources/external/"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.ts$": "<rootDir>/script/preprocessor.js"
+    },
+    "testMatch": [
+      "<rootDir>/test/**/*.(ts|js)"
+    ],
+    "collectCoverageFrom": [
+      "**/*.ts",
+      "!**/node_modules/**",
+      "!**/vendor/**"
+    ],
+    "coverageDirectory": "coverage/",
+    "coverageReporters": [
+      "html",
+      "text"
+    ]
+  }
+}

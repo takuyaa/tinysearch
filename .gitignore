@@ -1,0 +1,15 @@
+.DS_STORE
+Thumbs.db
+
+.idea/
+.vscode/
+
+node_modules/
+npm-debug.log
+
+build/
+coverage/
+lib/
+
+test/resources/external/**/*
+!test/resources/external/.gitkeep
