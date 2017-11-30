@@ -15,7 +15,7 @@ function tokenize(text: string): string[] {
   });
 }
 
-describe('tokenizer', () => {
+describe('tokenize', () => {
   test('should return empty array with empty string', () => {
     const tokens = tokenize('');
     expect(tokens).toEqual([]);
