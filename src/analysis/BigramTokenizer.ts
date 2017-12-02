@@ -8,10 +8,10 @@ class BigramTokenizer implements Tokenizer {
     }
     const tokens: Token[] = [];
     let offset = 0;
-    let ch1EndPos = BigramTokenizer._isHighSurrogate(text.charCodeAt(0)) ? 2 : 1;
+    let ch1EndPos = BigramTokenizer.isHighSurrogate(text.charCodeAt(0)) ? 2 : 1;
     let ch2EndPos;
     while (true) {
-      if (BigramTokenizer._isHighSurrogate(text.charCodeAt(ch1EndPos))) {
+      if (BigramTokenizer.isHighSurrogate(text.charCodeAt(ch1EndPos))) {
         ch2EndPos = ch1EndPos + 2;
       } else {
         ch2EndPos = ch1EndPos + 1;
@@ -27,7 +27,7 @@ class BigramTokenizer implements Tokenizer {
     }
   }
 
-  static _isHighSurrogate(code: number) {
+  private static isHighSurrogate(code: number) {
     if (code >= 0xD800 && code <= 0xDBFF) {
         return true;
     } else {
