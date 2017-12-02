@@ -2,7 +2,7 @@
   "name": "tinysearch",
   "description": "[WIP] Tiny search engine implementation for your studies",
   "version": "0.0.0",
-  "author": "takuya-a <takuya.a@gmail.com>",
+  "author": "Takuya Asano <takuya.a@gmail.com>",
   "bugs": {
     "url": "https://github.com/takuyaa/tinysearch/issues"
   },
