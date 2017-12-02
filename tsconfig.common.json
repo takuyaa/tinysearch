@@ -4,6 +4,7 @@
     "allowUnusedLabels": false,
     "importHelpers": true,
     "noEmitHelpers": true,
+    "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
